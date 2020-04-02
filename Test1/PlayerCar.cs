@@ -4,10 +4,9 @@ using System.Text;
 
 namespace Test1
 {
-    class Car
+    class PlayerCar : Car
     {
-        public string name;
-        public int speed;
-        public int health;
+        private int playerState;
+
     }
 }
