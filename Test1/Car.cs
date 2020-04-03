@@ -4,10 +4,21 @@ using System.Text;
 
 namespace Test1
 {
-    class Car
+    public class Car
     {
-        public string name;
-        public int speed;
-        public int health;
+        public string Name { get; set; }
+        public int Speed { get; set; }
+        public int Health { get; set; }
+
+        public Car()
+        {
+
+        }
+        public Car(string name, int speed, int health)
+        {
+            Name = name;
+            Speed = speed;
+            Health = health;
+        }
     }
 }

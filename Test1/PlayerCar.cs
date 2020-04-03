@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test1
 {
-    class PlayerCar : Car
+    public class PlayerCar : Car
     {
         private int playerState;
 
