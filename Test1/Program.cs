@@ -6,7 +6,9 @@ namespace Test1
     {
         static void Main(string[] args)
         {
-            Lesson10();
+            Lesson11();
+
+            Console.ReadLine();
         }
 
         static void Lesson10()
@@ -25,13 +27,26 @@ namespace Test1
             playerCar.printCurrentPosition();
             Console.WriteLine($"Enemy car:");
             enemyCar.printCurrentPosition();
-
-            Console.ReadLine();
         }
 
         static void Lesson11()
         {
+            PlayerCar playerCar1 = new PlayerCar("SportCar1", 10, 100);
+            PlayerCar playerCar2 = new PlayerCar("SportCar2", 10, 100);
+            playerCar2.position.movePosition(5, 5);
+            playerCar1.position = playerCar1.position + playerCar2.position;
+            playerCar1.printCurrentPosition();
 
+            /////
+            ///
+            playerCar1.position=new Position(0,0);
+            playerCar2.position = new Position(0, 1);
+            Console.WriteLine(playerCar1.position < playerCar2.position);
+            Console.WriteLine(playerCar1.position > playerCar2.position);
+            Console.WriteLine(playerCar1.position <= playerCar2.position);
+            Console.WriteLine(playerCar1.position >= playerCar2.position);
+            Console.WriteLine(playerCar1.position == playerCar2.position);
+            Console.WriteLine(playerCar1.position != playerCar2.position);
         }
     }
 }
