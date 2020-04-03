@@ -8,5 +8,15 @@ namespace Test1
     {
         private int playerState;
 
+        public PlayerCar()
+        {
+
+        }
+        public PlayerCar(string name, int speed, int health)
+        {
+            this.Name = name;
+            this.Speed = speed;
+            this.Health = health;
+        }
     }
 }
