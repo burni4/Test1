@@ -6,6 +6,11 @@ namespace Test1
     {
         static void Main(string[] args)
         {
+            Lesson10();
+        }
+
+        static void Lesson10()
+        {
             PlayerCar playerCar = new PlayerCar("SportCar", 10, 100);
             Console.WriteLine($"Player car Start position:");
             playerCar.printCurrentPosition();
@@ -13,8 +18,8 @@ namespace Test1
             Console.WriteLine($"Enemy car Start position:");
             enemyCar.printCurrentPosition();
 
-            playerCar.movePosition(1, 1);
-            enemyCar.movePosition(2, 2);
+            playerCar.position.movePosition(1, 1);
+            enemyCar.position.movePosition(2, 2);
 
             Console.WriteLine($"Player car:");
             playerCar.printCurrentPosition();
@@ -22,6 +27,11 @@ namespace Test1
             enemyCar.printCurrentPosition();
 
             Console.ReadLine();
+        }
+
+        static void Lesson11()
+        {
+
         }
     }
 }

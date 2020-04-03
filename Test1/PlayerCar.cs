@@ -8,11 +8,7 @@ namespace Test1
     {
         private int playerState;
 
-        public PlayerCar()
-        {
-
-        }
-        public PlayerCar(string name, int speed, int health)
+        public PlayerCar(string name, int speed, int health): base(name,speed,health)
         {
             this.Name = name;
             this.Speed = speed;
