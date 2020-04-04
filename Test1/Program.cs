@@ -6,8 +6,8 @@ namespace Test1
     {
         static void Main(string[] args)
         {
-            //TODO: не до конца понял тонкости работы с where
-            Lesson12();
+          
+            Lesson13();
 
             Console.ReadLine();
         }
@@ -16,18 +16,18 @@ namespace Test1
         {
             PlayerCar playerCar = new PlayerCar("SportCar", 10, 100);
             Console.WriteLine($"Player car Start position:");
-            playerCar.printCurrentPosition();
+            playerCar.PrintCurrentPosition();
             EnemyCar enemyCar = new EnemyCar("BigBoss", 15, 200);
             Console.WriteLine($"Enemy car Start position:");
-            enemyCar.printCurrentPosition();
+            enemyCar.PrintCurrentPosition();
 
             playerCar.position.movePosition(1, 1);
             enemyCar.position.movePosition(2, 2);
 
             Console.WriteLine($"Player car:");
-            playerCar.printCurrentPosition();
+            playerCar.PrintCurrentPosition();
             Console.WriteLine($"Enemy car:");
-            enemyCar.printCurrentPosition();
+            enemyCar.PrintCurrentPosition();
         }
 
         static void Lesson11()
@@ -36,7 +36,7 @@ namespace Test1
             PlayerCar playerCar2 = new PlayerCar("SportCar2", 10, 100);
             playerCar2.position.movePosition(5, 5);
             playerCar1.position = playerCar1.position + playerCar2.position;
-            playerCar1.printCurrentPosition();
+            playerCar1.PrintCurrentPosition();
 
             /////
             ///
@@ -52,6 +52,21 @@ namespace Test1
 
         static void Lesson12()
         {
+
+        }
+
+        static void Lesson13()
+        {
+            PlayerCar pcar = new PlayerCar("car1", 1, 100);
+            pcar.PrintCurrentPosition();
+            pcar.position.PrintCurrentPosition();
+            EnemyCar enCar = new EnemyCar("enemyCar", 1, 222);
+            enCar.PrintCurrentPosition();
+            enCar.position.PrintCurrentPosition();
+
+            Car newCar = (Car)pcar;
+            newCar.PrintCurrentPosition();
+            newCar.position.PrintCurrentPosition();
 
         }
     }

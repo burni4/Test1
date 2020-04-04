@@ -2,15 +2,25 @@
 
 namespace Test1
 {
-    public class Position
+    public class Position : ICarActions, IDisplayInformationOnTheScreen
     {
         public double CoordinateX { get; set; } = 0;
         public double CoordinateY { get; set; } = 0;
+        public int accelerationOfMovement { get;  set; } = 1;
 
         public Position(double x, double y)
         {
             CoordinateX = x;
             CoordinateY = y;
+        }
+        public void MoveUpX(int x)
+        {
+            CoordinateX += x;
+        }
+
+        public void MoveUpY(int y)
+        {
+            CoordinateY += y;
         }
 
         public string getCurrentPositionInString()
@@ -34,6 +44,11 @@ namespace Test1
         public override int GetHashCode()
         {
             return HashCode.Combine(CoordinateX, CoordinateY);
+        }
+
+        public void PrintCurrentPosition()
+        {
+            Console.WriteLine($"Current position: X[{this.CoordinateX}] Y[{this.CoordinateY}]");
         }
 
         public static Position operator+ (Position position1, Position position2)

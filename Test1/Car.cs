@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Test1
 {
-    public class Car
+    public class Car: IDisplayInformationOnTheScreen
     {
         public string Name { get; set; }
         public int Speed { get; set; }
@@ -19,9 +19,9 @@ namespace Test1
             Health = health;
         }
 
-        public void printCurrentPosition()
+        public void PrintCurrentPosition()
         {
-            Console.WriteLine($"Current car position: {position.getCurrentPositionInString()}");
+            Console.WriteLine($"Current car({this.Name}) position: X[{this.position.CoordinateX}] Y[{this.position.CoordinateY}]");
         }
     }
 }
