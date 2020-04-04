@@ -24,6 +24,18 @@ namespace Test1
             CoordinateY += y;
         }
 
+        public override bool Equals(object obj)
+        {
+            return obj is Position position &&
+                   CoordinateX == position.CoordinateX &&
+                   CoordinateY == position.CoordinateY;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(CoordinateX, CoordinateY);
+        }
+
         public static Position operator+ (Position position1, Position position2)
         {
             var newPosition = new Position(position1.CoordinateX+ position2.CoordinateX, 

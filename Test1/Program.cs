@@ -6,7 +6,8 @@ namespace Test1
     {
         static void Main(string[] args)
         {
-            Lesson11();
+            //TODO: не до конца понял тонкости работы с where
+            Lesson12();
 
             Console.ReadLine();
         }
@@ -47,6 +48,11 @@ namespace Test1
             Console.WriteLine(playerCar1.position >= playerCar2.position);
             Console.WriteLine(playerCar1.position == playerCar2.position);
             Console.WriteLine(playerCar1.position != playerCar2.position);
+        }
+
+        static void Lesson12()
+        {
+
         }
     }
 }
