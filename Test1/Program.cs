@@ -62,7 +62,7 @@ namespace Test1
             pcar.position.PrintCurrentPosition();
             EnemyCar enCar = new EnemyCar("enemyCar", 1, 222);
             enCar.PrintCurrentPosition();
-            enCar.position.PrintCurrentPosition();
+            enCar.position.PrintCurrentPosition(); 
 
             Car newCar = (Car)pcar;
             newCar.PrintCurrentPosition();
