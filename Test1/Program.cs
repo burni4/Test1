@@ -6,8 +6,8 @@ namespace Test1
     {
         static void Main(string[] args)
         {
-          
-            Lesson13();
+
+            Lesson14_Exceptions();
 
             Console.ReadLine();
         }
@@ -67,6 +67,38 @@ namespace Test1
             Car newCar = (Car)pcar;
             newCar.PrintCurrentPosition();
             newCar.position.PrintCurrentPosition();
+
+        }
+
+        static void Lesson14_Exceptions()
+        {
+            try
+            {
+                int i = 10;
+                int j = i / 1;
+                int c = 2000000000;
+
+                int b = checked( c * 1);
+
+                throw new ExceptionIncorrectData(); 
+                
+            }
+            catch(DivideByZeroException)
+            {
+                Console.WriteLine("Divide by zero");
+            }
+            catch (ExceptionIncorrectData ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("The work of the program is completed");
+            }
 
         }
     }
