@@ -11,6 +11,8 @@ namespace Test1
         public int Health { get; set; }
         public Position position { get; set; }
 
+        public event Action PositionEvents;
+
         public Car(string name, int speed, int health)
         {
             position = new Position(0, 0);
@@ -21,7 +23,13 @@ namespace Test1
 
         public void PrintCurrentPosition()
         {
+
             Console.WriteLine($"Current car({this.Name}) position: X[{this.position.CoordinateX}] Y[{this.position.CoordinateY}]");
+        }
+
+        public void CheckCarPostion()
+        {
+            PositionEvents?.Invoke();
         }
     }
 }

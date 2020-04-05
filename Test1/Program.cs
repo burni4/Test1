@@ -7,7 +7,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson14_Exceptions();
+            Lesson15_DelegatesAndEvents();
 
             Console.ReadLine();
         }
@@ -103,5 +103,17 @@ namespace Test1
 
         }
         #endregion
+
+        public static void Lesson15_DelegatesAndEvents()
+        {
+
+            PlayerCar pcar = new PlayerCar("Car1",1,1);
+            pcar.PrintCurrentPosition();
+            pcar.CheckCarPostion();
+            pcar.MoveUpX(1);
+            pcar.PrintCurrentPosition();
+            pcar.CheckCarPostion();
+
+        }
     }
 }

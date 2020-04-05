@@ -6,7 +6,7 @@ namespace Test1
     {
         public double CoordinateX { get; set; } = 0;
         public double CoordinateY { get; set; } = 0;
-        public int accelerationOfMovement { get;  set; } = 1;
+        public int accelerationOfMovement { get; set; } = 1;
 
         public Position(double x, double y)
         {
@@ -21,6 +21,11 @@ namespace Test1
         public void MoveUpY(int y)
         {
             CoordinateY += y;
+        }
+
+        public void PositionHasBeenChanged()
+        {
+            Console.WriteLine("Position has been changed");
         }
 
         public string getCurrentPositionInString()

@@ -21,14 +21,16 @@ namespace Test1
         public void MoveUpX(int x)
         {
             this.position.CoordinateX += x * accelerationOfMovement;
+            this.PositionEvents += this.position.PositionHasBeenChanged;
         }
 
         public void MoveUpY(int y)
         {
             this.position.CoordinateY += y * accelerationOfMovement;
+            this.PositionEvents += this.position.PositionHasBeenChanged;
         }
 
-        public void PrintCurrentPosition()
+        public new void PrintCurrentPosition()
         {
             Console.WriteLine($"Current player car({this.Name}) position: X[{this.position.CoordinateX}] Y[{this.position.CoordinateY}]");
         }

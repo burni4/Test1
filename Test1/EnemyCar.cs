@@ -21,11 +21,13 @@ namespace Test1
         public void MoveUpX(int x)
         {
             this.position.CoordinateX += x * accelerationOfMovement;
+            this.PositionEvents += this.position.PositionHasBeenChanged;
         }
 
         public void MoveUpY(int y)
         {
             this.position.CoordinateY += y * accelerationOfMovement;
+            this.PositionEvents += this.position.PositionHasBeenChanged;
         }
 
         public void PrintCurrentPosition()
