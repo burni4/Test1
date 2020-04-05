@@ -12,6 +12,7 @@ namespace Test1
             Console.ReadLine();
         }
 
+        #region LessonsMethods
         static void Lesson10()
         {
             PlayerCar playerCar = new PlayerCar("SportCar", 10, 100);
@@ -101,5 +102,6 @@ namespace Test1
             }
 
         }
+        #endregion
     }
 }

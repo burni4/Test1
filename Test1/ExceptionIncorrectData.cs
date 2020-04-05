@@ -6,7 +6,7 @@ namespace Test1
     {
         public ExceptionIncorrectData() : base("Incorrect data entered")
         {
-          
+    
         }
     }
 }
