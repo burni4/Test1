@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Text;
 
 namespace Test1
 {
@@ -7,7 +9,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson15_DelegatesAndEvents();
+            Lesson16_Stream_and_Files();
 
             Console.ReadLine();
         }
@@ -102,17 +104,40 @@ namespace Test1
             }
 
         }
-        #endregion
-
         public static void Lesson15_DelegatesAndEvents()
         {
 
-            PlayerCar pcar = new PlayerCar("Car1",1,1);
+            PlayerCar pcar = new PlayerCar("Car1", 1, 1);
             pcar.PrintCurrentPosition();
             pcar.CheckCarPostion();
             pcar.MoveUpX(1);
             pcar.PrintCurrentPosition();
             pcar.CheckCarPostion();
+
+        }
+        #endregion
+
+        public static void Lesson16_Stream_and_Files()
+        {
+            Console.WriteLine("Enter your login");
+            string login = Console.ReadLine();
+            Console.WriteLine("Enter your password");
+            string password = Console.ReadLine();
+
+            using (var sw = new StreamWriter("LoginAndPassword.txt",false,Encoding.UTF8))
+            {
+                sw.WriteLine(login);
+                sw.WriteLine(password);
+            }
+
+            using (var sr = new StreamReader("LoginAndPassword.txt", Encoding.UTF8))
+            {
+                Console.WriteLine("From file");
+                while (!sr.EndOfStream)
+                {
+                    Console.WriteLine(sr.ReadLine());
+                }
+            }
 
         }
     }
