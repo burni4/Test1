@@ -11,6 +11,5 @@ namespace Test1
         {
             ID = default(T);
         }
-
     }
 }

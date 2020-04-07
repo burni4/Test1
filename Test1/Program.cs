@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace Test1
 {
@@ -9,7 +10,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson16_Stream_and_Files();
+            Lesson17_Async_Await_Thread();
 
             Console.ReadLine();
         }
@@ -115,7 +116,6 @@ namespace Test1
             pcar.CheckCarPostion();
 
         }
-        #endregion
 
         public static void Lesson16_Stream_and_Files()
         {
@@ -124,21 +124,34 @@ namespace Test1
             Console.WriteLine("Enter your password");
             string password = Console.ReadLine();
 
-            using (var sw = new StreamWriter("LoginAndPassword.txt",false,Encoding.UTF8))
+            using (var sw = new StreamWriter("LoginAndPassword.txt", false, Encoding.UTF8))
             {
                 sw.WriteLine(login);
                 sw.WriteLine(password);
             }
 
-            using (var sr = new StreamReader("LoginAndPassword.txt", Encoding.UTF8))
+            using var sr = new StreamReader("LoginAndPassword.txt", Encoding.UTF8);
+            Console.WriteLine("From file");
+            while (!sr.EndOfStream)
             {
-                Console.WriteLine("From file");
-                while (!sr.EndOfStream)
-                {
-                    Console.WriteLine(sr.ReadLine());
-                }
+                Console.WriteLine(sr.ReadLine());
             }
 
         }
+        #endregion
+
+        public static void Lesson17_Async_Await_Thread()
+        {
+            Console.WriteLine("Start main");
+            var obj = new AsyncAwaitThread();
+
+            obj.StartThread(ThreadPriority.Normal,"1");
+            obj.StartThread(ThreadPriority.Highest, "2");
+            obj.StartAsync();
+            obj.StartNotAsync();
+
+            Console.WriteLine("End main");
+        }
+
     }
 }
