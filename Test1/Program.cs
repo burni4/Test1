@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Threading;
+using System.Linq;
 
 namespace Test1
 {
@@ -10,7 +11,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson17_LINQ();
+            Lesson20_LINQ();
 
             Console.ReadLine();
         }
@@ -153,7 +154,7 @@ namespace Test1
         }
         #endregion
 
-        public static void Lesson17_LINQ()
+        public static void Lesson20_LINQ()
         {
             var rnd = new Random();
             int[] array= new int[15];
@@ -169,6 +170,20 @@ namespace Test1
                 Console.WriteLine(arElem);
             }
             Console.WriteLine("Array end <--------");
+
+            //var newArray = from elem in array
+            //               where elem > 5
+            //               select elem;
+
+            var newArray=array.Where(x => x > 5);
+
+
+            Console.WriteLine("Array start [After LINQ] --------->");
+            foreach (int arElem in newArray)
+            {
+                Console.WriteLine(arElem);
+            }
+            Console.WriteLine("Array end [After LINQ] <--------");
 
         }
 
