@@ -10,7 +10,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson17_Async_Await_Thread();
+            Lesson17_LINQ();
 
             Console.ReadLine();
         }
@@ -138,19 +138,38 @@ namespace Test1
             }
 
         }
-        #endregion
 
         public static void Lesson17_Async_Await_Thread()
         {
             Console.WriteLine("Start main");
             var obj = new AsyncAwaitThread();
 
-            obj.StartThread(ThreadPriority.Normal,"1");
+            obj.StartThread(ThreadPriority.Normal, "1");
             obj.StartThread(ThreadPriority.Highest, "2");
             obj.StartAsync();
             obj.StartNotAsync();
 
             Console.WriteLine("End main");
+        }
+        #endregion
+
+        public static void Lesson17_LINQ()
+        {
+            var rnd = new Random();
+            int[] array= new int[15];
+
+            for (int i=0; i<15; i++)
+            {
+                array[i] = rnd.Next(1, 10);
+            }
+
+            Console.WriteLine("Array start --------->");
+            foreach(int arElem in array)
+            {
+                Console.WriteLine(arElem);
+            }
+            Console.WriteLine("Array end <--------");
+
         }
 
     }
