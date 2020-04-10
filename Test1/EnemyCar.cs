@@ -30,7 +30,7 @@ namespace Test1
             this.PositionEvents += this.position.PositionHasBeenChanged;
         }
 
-        public void PrintCurrentPosition()
+        public new void PrintCurrentPosition()
         {
             Console.WriteLine($"Current enemy car({this.Name}) position: X[{this.position.CoordinateX}] Y[{this.position.CoordinateY}]");
         }

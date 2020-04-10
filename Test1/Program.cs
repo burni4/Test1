@@ -11,7 +11,7 @@ namespace Test1
         static void Main(string[] args)
         {
 
-            Lesson20_LINQ();
+            Lesson21_Extensions();
 
             Console.ReadLine();
         }
@@ -152,20 +152,19 @@ namespace Test1
 
             Console.WriteLine("End main");
         }
-        #endregion
 
         public static void Lesson20_LINQ()
         {
             var rnd = new Random();
-            int[] array= new int[15];
+            int[] array = new int[15];
 
-            for (int i=0; i<15; i++)
+            for (int i = 0; i < 15; i++)
             {
                 array[i] = rnd.Next(1, 10);
             }
 
             Console.WriteLine("Array start --------->");
-            foreach(int arElem in array)
+            foreach (int arElem in array)
             {
                 Console.WriteLine(arElem);
             }
@@ -175,7 +174,7 @@ namespace Test1
             //               where elem > 5
             //               select elem;
 
-            var newArray=array.Where(x => x > 5);
+            var newArray = array.Where(x => x > 5);
 
 
             Console.WriteLine("Array start [After LINQ] --------->");
@@ -185,6 +184,19 @@ namespace Test1
             }
             Console.WriteLine("Array end [After LINQ] <--------");
 
+        }
+        #endregion
+
+        static void Lesson21_Extensions()
+        {
+            int x = 4;
+            Console.WriteLine(x.MyIncrement(7));
+            Console.WriteLine(x.MyDecrement(3));
+
+            var mycar = new PlayerCar("Car1", 1, 1);
+            mycar.accelerationOfMovement = 1;
+            mycar.AddAccelerationOfMovement(10);
+            Console.WriteLine(mycar.accelerationOfMovement);
         }
 
     }

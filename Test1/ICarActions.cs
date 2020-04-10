@@ -1,6 +1,6 @@
 ﻿namespace Test1
 {
-    interface ICarActions
+    public interface ICarActions
     {
         int accelerationOfMovement { get; set; }
         void MoveUpX(int x);
